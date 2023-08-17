@@ -20,6 +20,8 @@ namespace OrderProcessing.Domain.Entities
             Id = Guid.NewGuid(); // Generate a new Guid for the Order Id
             CustomerId = customerId;
             Items = items;
+
+            throw new NotImplementedException();
         }
     }
 }

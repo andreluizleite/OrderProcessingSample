@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using MediatR;
 using OrderProcessing.Application.Commands;
+using OrderProcessing.Application.Responses;
 
 namespace OrderProcessing.Api.Controllers
 {
@@ -19,8 +20,22 @@ namespace OrderProcessing.Api.Controllers
         [HttpPost]
         public async Task<IActionResult> PlaceOrder([FromBody] PlaceOrderCommand command)
         {
-            var result = await _mediator.Send(command);
-            return Ok(result);
+            try
+            {
+                var result = await _mediator.Send(command);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                var errorResponse = new ErrorResponse
+                {
+                    ErrorCode = 400,
+                    ErrorMessage = "An error occurred while processing the request.",
+                    Details = ex.Message
+                };
+
+                return BadRequest(errorResponse);
+            }
         }
     }
 }

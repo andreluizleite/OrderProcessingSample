@@ -1,7 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using OrderProcessing.Api.Middlewares;
 using OrderProcessing.Application;
 using OrderProcessing.Infrastructure;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,7 +25,13 @@ builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Progr
 
 OrderProcessingModule.Configure(builder.Services);
 
+builder.Host.UseSerilog((context, configuration) => configuration.ReadFrom.Configuration(context.Configuration));
+
 var app = builder.Build();
+
+app.UseMiddleware<ExceptionHandlingMiddleware>();
+
+app.UseSerilogRequestLogging();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
