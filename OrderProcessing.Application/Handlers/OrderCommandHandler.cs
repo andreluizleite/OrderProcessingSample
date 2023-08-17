@@ -1,36 +1,42 @@
-﻿using System.Threading;
-using System.Threading.Tasks;
-using MediatR;
-using OrderProcessing.Domain.Repositories;
-using OrderProcessing.Domain.Entities;
-using OrderProcessing.Application.Events; // Import the namespace for events
+﻿using MediatR;
 using OrderProcessing.Application.Extensions;
+using OrderProcessing.Application.Messaging; // Import the namespace for RabbitMQProducer
+using OrderProcessing.Domain.Entities;
+using OrderProcessing.Domain.Repositories;
 
 namespace OrderProcessing.Application.Commands
 {
     public class PlaceOrderCommandHandler : IRequestHandler<PlaceOrderCommand, OrderCommandResult>
     {
         private readonly IOrderRepository _orderRepository;
-        private readonly IMediator _mediator; // Inject IMediator
+        private readonly RabbitMQProducer _rabbitMQProducer;
 
-        public PlaceOrderCommandHandler(IOrderRepository orderRepository, IMediator mediator)
+        public PlaceOrderCommandHandler(IOrderRepository orderRepository, RabbitMQProducer rabbitMQProducer)
         {
             _orderRepository = orderRepository;
-            _mediator = mediator;
+            _rabbitMQProducer = rabbitMQProducer;
         }
 
         public async Task<OrderCommandResult> Handle(PlaceOrderCommand request, CancellationToken cancellationToken)
         {
-            // Validate and process the order
-            var order = request.ToOrder();
+            try
+            {
+                // Validate and process the order
+                var order = request.ToOrder();
 
-            await _orderRepository.AddAsync(order);
+                await _orderRepository.AddAsync(order);
 
-            // Publish an event
-            var orderPlacedEvent = new OrderPlacedEvent(order.Id);
-            await _mediator.Publish(orderPlacedEvent); // Publish the event
+                // Publish an event to RabbitMQ
+                _rabbitMQProducer.PublishOrderPlacedEvent(order.Id.ToString());
 
-            return new OrderCommandResult { OrderId = order.Id };
+                return new OrderCommandResult { OrderId = order.Id };
+
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("An error occurred while processing the order.", ex);
+            }
         }
     }
 }

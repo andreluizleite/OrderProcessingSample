@@ -17,10 +17,9 @@ namespace OrderProcessing.Infrastructure.Repositories
 
         public async Task AddAsync(Order order)
         {
-            await _dbContext.Orders.AddAsync(order);
-            await _dbContext.SaveChangesAsync();
+            //I will not implement the DB at that moment
+           // await _dbContext.Orders.AddAsync(order);
+           // await _dbContext.SaveChangesAsync();
         }
-
-        // Other repository methods as needed
     }
 }
