@@ -1,0 +1,17 @@
+C:\Users\andre\source\repos\OrderProcessingSample\OrderProcessing.Application\obj\Debug\net7.0\OrderProcessing.Application.csproj.AssemblyReference.cache
+C:\Users\andre\source\repos\OrderProcessingSample\OrderProcessing.Application\obj\Debug\net7.0\OrderProcessing.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\andre\source\repos\OrderProcessingSample\OrderProcessing.Application\obj\Debug\net7.0\OrderProcessing.Application.AssemblyInfoInputs.cache
+C:\Users\andre\source\repos\OrderProcessingSample\OrderProcessing.Application\obj\Debug\net7.0\OrderProcessing.Application.AssemblyInfo.cs
+C:\Users\andre\source\repos\OrderProcessingSample\OrderProcessing.Application\obj\Debug\net7.0\OrderProcessing.Application.csproj.CoreCompileInputs.cache
+C:\Users\andre\source\repos\OrderProcessingSample\OrderProcessing.Application\bin\Debug\net7.0\OrderProcessing.Application.deps.json
+C:\Users\andre\source\repos\OrderProcessingSample\OrderProcessing.Application\bin\Debug\net7.0\OrderProcessing.Application.dll
+C:\Users\andre\source\repos\OrderProcessingSample\OrderProcessing.Application\bin\Debug\net7.0\OrderProcessing.Application.pdb
+C:\Users\andre\source\repos\OrderProcessingSample\OrderProcessing.Application\bin\Debug\net7.0\OrderProcessing.Domain.dll
+C:\Users\andre\source\repos\OrderProcessingSample\OrderProcessing.Application\bin\Debug\net7.0\OrderProcessing.Domain.pdb
+C:\Users\andre\source\repos\OrderProcessingSample\OrderProcessing.Application\obj\Debug\net7.0\OrderProcessing.Application.csproj.CopyComplete
+C:\Users\andre\source\repos\OrderProcessingSample\OrderProcessing.Application\obj\Debug\net7.0\OrderProcessing.Application.dll
+C:\Users\andre\source\repos\OrderProcessingSample\OrderProcessing.Application\obj\Debug\net7.0\refint\OrderProcessing.Application.dll
+C:\Users\andre\source\repos\OrderProcessingSample\OrderProcessing.Application\obj\Debug\net7.0\OrderProcessing.Application.pdb
+C:\Users\andre\source\repos\OrderProcessingSample\OrderProcessing.Application\obj\Debug\net7.0\ref\OrderProcessing.Application.dll
+C:\Users\andre\source\repos\OrderProcessingSample\OrderProcessing.Application\bin\Debug\net7.0\OrderProcessing.Infrastructure.dll
+C:\Users\andre\source\repos\OrderProcessingSample\OrderProcessing.Application\bin\Debug\net7.0\OrderProcessing.Infrastructure.pdb

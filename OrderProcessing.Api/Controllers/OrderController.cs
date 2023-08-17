@@ -1,12 +1,26 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using MediatR;
+using OrderProcessing.Application.Commands;
 
 namespace OrderProcessing.Api.Controllers
 {
-    public class OrderController : Controller
+    [ApiController]
+    [Route("api/[controller]")]
+    public class OrderController : ControllerBase
     {
-        public IActionResult Index()
+        private readonly IMediator _mediator;
+
+        public OrderController(IMediator mediator)
         {
-            return View();
+            _mediator = mediator;
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> PlaceOrder([FromBody] PlaceOrderCommand command)
+        {
+            var result = await _mediator.Send(command);
+            return Ok(result);
         }
     }
 }

@@ -1,12 +1,20 @@
-﻿using System;
+﻿using MediatR;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OrderProcessing.Application.Commands
 {
-    internal class PlaceOrderCommand
+    public class PlaceOrderCommand : IRequest<OrderCommandResult>
     {
+        public Guid CustomerId { get; set; }
+        public List<OrderItemRequest> Items { get; set; }
+    }
+
+    public class OrderItemRequest
+    {
+        public Guid ProductId { get; set; }
+        public int Quantity { get; set; }
+
+        public decimal Price { get; set; }
     }
 }

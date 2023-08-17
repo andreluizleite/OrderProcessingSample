@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderProcessing.Api", "OrderProcessing\OrderProcessing.Api.csproj", "{E7220BBB-35BC-48B1-A4AE-C1C32A8F9315}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderProcessing.Application", "OrderProcessing.Application\OrderProcessing.Application.csproj", "{6E0BF795-4145-46AC-BD45-7ED09B6F5EED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderProcessing.Application", "OrderProcessing.Application\OrderProcessing.Application.csproj", "{6E0BF795-4145-46AC-BD45-7ED09B6F5EED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderProcessing.Domain", "OrderProcessing.Domain\OrderProcessing.Domain.csproj", "{D41675E8-88D8-48F9-8109-D8591B980F0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderProcessing.Domain", "OrderProcessing.Domain\OrderProcessing.Domain.csproj", "{D41675E8-88D8-48F9-8109-D8591B980F0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderProcessing.Infrastructure", "OrderProcessing.Infrastructure\OrderProcessing.Infrastructure.csproj", "{C9FEEE7C-8561-4EDF-80CC-82DB0AC0D04B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderProcessing.Infrastructure", "OrderProcessing.Infrastructure\OrderProcessing.Infrastructure.csproj", "{C9FEEE7C-8561-4EDF-80CC-82DB0AC0D04B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderProcessing.Application.Tests", "OrderProcessing.Application.Tests\OrderProcessing.Application.Tests.csproj", "{19988300-DDC2-4F91-BB78-F1BBC729483A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderProcessing.Application.Tests", "OrderProcessing.Application.Tests\OrderProcessing.Application.Tests.csproj", "{19988300-DDC2-4F91-BB78-F1BBC729483A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{57EF6F24-D5B0-4A5F-BEA8-5EA08605AF99}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderProcessing.Api", "OrderProcessing.Api\OrderProcessing.Api.csproj", "{2F714AC7-AE9A-472A-9519-2FC6C5FDFCEF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E7220BBB-35BC-48B1-A4AE-C1C32A8F9315}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E7220BBB-35BC-48B1-A4AE-C1C32A8F9315}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E7220BBB-35BC-48B1-A4AE-C1C32A8F9315}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E7220BBB-35BC-48B1-A4AE-C1C32A8F9315}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6E0BF795-4145-46AC-BD45-7ED09B6F5EED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6E0BF795-4145-46AC-BD45-7ED09B6F5EED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E0BF795-4145-46AC-BD45-7ED09B6F5EED}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -41,6 +37,10 @@ Global
 		{19988300-DDC2-4F91-BB78-F1BBC729483A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19988300-DDC2-4F91-BB78-F1BBC729483A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19988300-DDC2-4F91-BB78-F1BBC729483A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F714AC7-AE9A-472A-9519-2FC6C5FDFCEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F714AC7-AE9A-472A-9519-2FC6C5FDFCEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F714AC7-AE9A-472A-9519-2FC6C5FDFCEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F714AC7-AE9A-472A-9519-2FC6C5FDFCEF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

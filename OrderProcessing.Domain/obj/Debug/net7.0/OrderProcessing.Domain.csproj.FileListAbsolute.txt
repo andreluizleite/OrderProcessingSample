@@ -1,0 +1,12 @@
+C:\Users\andre\source\repos\OrderProcessingSample\OrderProcessing.Domain\obj\Debug\net7.0\OrderProcessing.Domain.csproj.AssemblyReference.cache
+C:\Users\andre\source\repos\OrderProcessingSample\OrderProcessing.Domain\obj\Debug\net7.0\OrderProcessing.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\andre\source\repos\OrderProcessingSample\OrderProcessing.Domain\obj\Debug\net7.0\OrderProcessing.Domain.AssemblyInfoInputs.cache
+C:\Users\andre\source\repos\OrderProcessingSample\OrderProcessing.Domain\obj\Debug\net7.0\OrderProcessing.Domain.AssemblyInfo.cs
+C:\Users\andre\source\repos\OrderProcessingSample\OrderProcessing.Domain\obj\Debug\net7.0\OrderProcessing.Domain.csproj.CoreCompileInputs.cache
+C:\Users\andre\source\repos\OrderProcessingSample\OrderProcessing.Domain\bin\Debug\net7.0\OrderProcessing.Domain.deps.json
+C:\Users\andre\source\repos\OrderProcessingSample\OrderProcessing.Domain\bin\Debug\net7.0\OrderProcessing.Domain.dll
+C:\Users\andre\source\repos\OrderProcessingSample\OrderProcessing.Domain\bin\Debug\net7.0\OrderProcessing.Domain.pdb
+C:\Users\andre\source\repos\OrderProcessingSample\OrderProcessing.Domain\obj\Debug\net7.0\OrderProcessing.Domain.dll
+C:\Users\andre\source\repos\OrderProcessingSample\OrderProcessing.Domain\obj\Debug\net7.0\refint\OrderProcessing.Domain.dll
+C:\Users\andre\source\repos\OrderProcessingSample\OrderProcessing.Domain\obj\Debug\net7.0\OrderProcessing.Domain.pdb
+C:\Users\andre\source\repos\OrderProcessingSample\OrderProcessing.Domain\obj\Debug\net7.0\ref\OrderProcessing.Domain.dll

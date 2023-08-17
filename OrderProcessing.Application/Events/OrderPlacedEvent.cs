@@ -1,12 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MediatR;
+using System;
 
 namespace OrderProcessing.Application.Events
 {
-    internal class OrderPlacedEvent
+    public class OrderPlacedEvent : INotification
     {
+        public Guid OrderId { get; }
+        public DateTime EventOccurredAt { get; }
+
+        public OrderPlacedEvent(Guid orderId)
+        {
+            OrderId = orderId;
+            EventOccurredAt = DateTime.UtcNow;
+        }
     }
 }

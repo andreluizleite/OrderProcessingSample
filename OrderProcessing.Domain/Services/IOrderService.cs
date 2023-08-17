@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OrderProcessing.Domain.Services
 {
-    internal class IOrderService
+    public interface IOrderService
     {
     }
 }
