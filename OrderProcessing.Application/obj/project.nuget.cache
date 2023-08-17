@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "XqpJV7i31P1a7lgvCIKsUVKwqWRj7sAzsC7LDPfN5Ug2ONGMMe1bdKCydD/iK1B2oC8PN3r/PKCftXBhJRdRGA==",
+  "dgSpecHash": "gs/gnoWzQzsL6z+tYd3CM/sW7QuaStXB6GzDI4LVapP25ycLm+2N+J21iVHyZ/jWYmMfuy77d13f1EF2DDW1Yg==",
   "success": true,
   "projectFilePath": "C:\\Users\\andre\\source\\repos\\OrderProcessingSample\\OrderProcessing.Application\\OrderProcessing.Application.csproj",
   "expectedPackageFiles": [
@@ -22,6 +22,7 @@
     "C:\\Users\\andre\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
     "C:\\Users\\andre\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
     "C:\\Users\\andre\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\andre\\.nuget\\packages\\opentracing\\0.12.1\\opentracing.0.12.1.nupkg.sha512",
     "C:\\Users\\andre\\.nuget\\packages\\rabbitmq.client\\6.5.0\\rabbitmq.client.6.5.0.nupkg.sha512",
     "C:\\Users\\andre\\.nuget\\packages\\system.configuration.configurationmanager\\7.0.0\\system.configuration.configurationmanager.7.0.0.nupkg.sha512",
     "C:\\Users\\andre\\.nuget\\packages\\system.diagnostics.eventlog\\7.0.0\\system.diagnostics.eventlog.7.0.0.nupkg.sha512",

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using MediatR;
 using OrderProcessing.Application.Commands;
 using OrderProcessing.Application.Responses;
+using OpenTracing;
 
 namespace OrderProcessing.Api.Controllers
 {
@@ -11,10 +12,12 @@ namespace OrderProcessing.Api.Controllers
     public class OrderController : ControllerBase
     {
         private readonly IMediator _mediator;
+        private readonly ITracer _tracer;
 
-        public OrderController(IMediator mediator)
+        public OrderController(ITracer tracer, IMediator mediator)
         {
             _mediator = mediator;
+            _tracer = tracer;
         }
 
         [HttpPost]
@@ -22,8 +25,14 @@ namespace OrderProcessing.Api.Controllers
         {
             try
             {
-                var result = await _mediator.Send(command);
-                return Ok(result);
+                using (var scope = _tracer.BuildSpan("PlaceOrder").WithTag("customerId", command.CustomerId.ToString()).StartActive(true))
+                {
+                    // Simulate a slow database query (10-second delay)
+                    await Task.Delay(TimeSpan.FromSeconds(10));
+
+                    var result = await _mediator.Send(command);
+                    return Ok(result);
+                }
             }
             catch (Exception ex)
             {

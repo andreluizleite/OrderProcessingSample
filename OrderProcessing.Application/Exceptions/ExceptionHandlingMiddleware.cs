@@ -1,8 +1,11 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using OpenTracing;
+using OpenTracing.Tag;
 using OrderProcessing.Application.Responses;
 using System;
+using System.Diagnostics;
 using System.Net;
 using System.Threading.Tasks;
 
@@ -11,34 +14,47 @@ namespace OrderProcessing.Api.Middlewares
     public class ExceptionHandlingMiddleware
     {
         private readonly RequestDelegate _next;
-        private readonly ILogger<ExceptionHandlingMiddleware> _logger;
+        private readonly ITracer _tracer;
 
-        public ExceptionHandlingMiddleware(RequestDelegate next, ILogger<ExceptionHandlingMiddleware> logger)
+        public ExceptionHandlingMiddleware(RequestDelegate next, ITracer tracer)
         {
             _next = next;
-            _logger = logger;
+            _tracer = tracer;
         }
 
-        public async Task Invoke(HttpContext context)
+        public async Task InvokeAsync(HttpContext context)
         {
-            try
+            using (var scope = _tracer.BuildSpan("HTTP Request").StartActive(true))
             {
-                await _next(context);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Unhandled exception occurred");
-                context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
-
-                var errorResponse = new ErrorResponse
+                try
                 {
-                    ErrorCode = 500,
-                    ErrorMessage = "An error occurred. Please try again later.",
-                    Details = ex.Message
-                };
+                    await _next(context);
+                }
+                catch (Exception ex)
+                {
+                    // Create span for exception
+                    var exceptionSpan = _tracer.BuildSpan("Exception")
+                        .WithTag(Tags.Error, true)
+                        .WithTag("exception.type", ex.GetType().FullName)
+                        .WithTag("exception.message", ex.Message)
+                        .StartActive(true);
 
-                context.Response.ContentType = "application/json";
-                await context.Response.WriteAsync(JsonConvert.SerializeObject(errorResponse));
+                    // Log exception details
+                    exceptionSpan.Span.Log(new[]
+                      {
+                        new KeyValuePair<string, object>("event", "exception"),
+                        new KeyValuePair<string, object>("exception.type", ex.GetType().FullName),
+                        new KeyValuePair<string, object>("exception.message", ex.Message)
+                    });
+
+                    // Rethrow the exception for further handling
+                    throw;
+                }
+                finally
+                {
+                    // Close the request span
+                    scope.Span.Finish();
+                }
             }
         }
     }

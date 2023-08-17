@@ -48,6 +48,14 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Jaeger.Core": {
+              "target": "Package",
+              "version": "[1.0.3, )"
+            },
+            "Jaeger.Senders.Thrift": {
+              "target": "Package",
+              "version": "[1.0.3, )"
+            },
             "MediatR": {
               "target": "Package",
               "version": "[12.1.1, )"
@@ -164,6 +172,10 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
+            },
+            "OpenTracing": {
+              "target": "Package",
+              "version": "[0.12.1, )"
             },
             "RabbitMQ.Client": {
               "target": "Package",
