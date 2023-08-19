@@ -12,6 +12,7 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="OpenTracing" Version="0.12.1" />
+    <PackageReference Include="Prometheus-net" Version="8.0.1" />
     <PackageReference Include="RabbitMQ.Client" Version="6.5.0" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="7.0.0" />
   </ItemGroup>
@@ -19,6 +20,10 @@
   <ItemGroup>
     <ProjectReference Include="..\OrderProcessing.Domain\OrderProcessing.Domain.csproj" />
     <ProjectReference Include="..\OrderProcessing.Infrastructure\OrderProcessing.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="PrometheusConfig\" />
   </ItemGroup>
 
 </Project>  

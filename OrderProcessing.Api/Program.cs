@@ -55,6 +55,8 @@ app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 app.UseSerilogRequestLogging();
 
+OrderProcessingModule.Configure(app);
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
